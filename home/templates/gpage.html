@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Game Page</title>
+    <link rel="icon" href="/static/images/favicon.jpg">
+    <link rel="stylesheet" href="/static/gpagenicepage.css" media="screen">
+<link rel="stylesheet" href="/static/gpage.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/static/gpagejquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/static/gpagenicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.6.2, nicepage.com">
+    <meta name="referrer" content="origin">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
+    
+    
+    <meta name="theme-color" content="#f06e49">
+    <meta property="og:title" content="Page 2">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/" /></head>
+  <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+  <body class="u-body u-xl-mode" data-lang="en">
+    
+    <section class="u-clearfix u-shading u-uploaded-video u-video u-section-1" id="sec-689a">
+      <div class="u-background-video u-expanded" style="filter: brightness(0.6);">
+        <div class="embed-responsive">
+          <video class="embed-responsive-item" controls max="4.5" data-autoplay="1" loop="" muted="1" autoplay="autoplay" playsinline="">
+            <source src="/static/files/Produce.mp4" type="video/mp4">
+            <p>Your browser does not support HTML5 video.</p>
+          </video>
+          <script>
+            const video = document.querySelector('video');
+            video.playbackRate = 0.8;
+          </script>
+        </div>
+      </div>
+      <div >
+        {% if messages %}
+            <div class="alert alert-info" style="position: fixed; top: 0; left: 0; right: 0; height: 35px; background-color: rgb(180, 24, 24); z-index: 999; display: flex; justify-content: center; align-items: center;">
+                {% for message in messages %}
+                <p style="font-size: 20px; color: #ffffff; font-weight: bold;">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+    
+      <style>
+        .message {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+  
+        .user {
+          font-weight: bold;
+          color: #ffffff;
+          margin-right: 10px;
+        }
+  
+        .value {
+          background-color: #ffffff00;
+          padding: 5px;
+          color: rgb(255, 255, 255);
+          border-radius: 5px;
+        }
+      </style>
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-gutter-18 u-layout-wrap u-layout-wrap-1">
+          <div class="u-gutter-0 u-layout">
+            <div class="u-layout-row">
+              <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <div class="u-black u-container-style u-group u-opacity u-opacity-75 u-shape-rectangle u-group-1">
+                    <div class="u-container-layout u-container-layout-2">
+                      <a href="https://nicepage.com/c/about-us-html-templates" class="u-border-2 u-border-hover-palette-2-base u-border-palette-2-base u-btn u-btn-round u-button-style u-hover-grey-90 u-none u-radius-6 u-text-hover-white u-text-white u-btn-1">Tic - Tac -Toe<br>(Human Vs Ai)
+                      </a>
+                      <h4 class="u-text u-text-1">&nbsp;GAMES</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-container-style u-layout-cell u-shape-rectangle u-size-16 u-layout-cell-2">
+                <div class="u-container-layout u-container-layout-3">
+                  <div class="u-black u-opacity u-opacity-75 u-shape u-shape-rectangle u-shape-1"></div>
+                  <h4 class="u-text u-text-2">&nbsp; CHAT</h4>
+                  
+                  <div class="u-form u-form-1" >
+                    <form action="join"  style="padding: 15px;"  id="post-form1" method="POST" name="form1">
+                      {% csrf_token %}
+                      <div class="u-form-group u-form-name u-label-none">
+                        <label for="name-6797" class="u-label">Name</label>
+                        <input type="text" placeholder="            PLAYER NAME"  name="room_name" id="room_name" class="u-black u-border-3 u-border-palette-2-base u-custom-font u-heading-font u-input u-input-rectangle u-radius-6 u-text-white u-input-1" required="">
+                      </div>
+                      <br>
+                      <div class="u-align-center u-form-group u-form-submit">
+                        <a href="#" class="u-border-2 u-border-hover-palette-2-base u-border-palette-2-base u-btn u-btn-round u-btn-submit u-button-style u-custom-color-4 u-hover-black u-radius-10 u-btn-2">JOIN</a>
+                        <input type="submit" value="submit" class="u-form-control-hidden">
+                      </div>
+                    </form>
+                  </div>
+                  <h4 class="u-text u-text-3">&nbsp;JOIN</h4>
+                  <div class="u-black u-container-style u-group u-opacity u-opacity-75 u-shape-rectangle u-group-2">
+                    <div class="u-container-layout u-container-layout-4">
+                      <h4 class="u-text u-text-4">&nbsp;ENABLE<br>
+                      </h4>
+                      <h4 class="u-text u-text-5">&nbsp; CHAT</h4>
+                      <a href=enable class="u-border-2 u-border-hover-palette-2-base u-border-palette-2-base u-btn u-btn-round u-button-style u-custom-color-4 u-hover-grey-90 u-radius-6 u-text-hover-white u-text-white u-btn-3">ENABLE</a>
+                      <h4 class="u-text u-text-6">&nbsp;DISABLE<br>
+                      </h4>
+                      <h4 class="u-text u-text-7">&nbsp; CHAT</h4>
+                      <a href=disable class="u-border-2 u-border-hover-palette-2-base u-border-palette-2-base u-btn u-btn-round u-button-style u-custom-color-4 u-hover-grey-90 u-radius-6 u-text-hover-white u-text-white u-btn-4">DISABLE</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-container-style u-layout-cell u-shape-rectangle u-size-24 u-layout-cell-3">
+                <div class="u-container-layout u-container-layout-5">
+                  <div class="u-black u-expanded-width u-opacity u-opacity-75 u-shape u-shape-rectangle u-shape-2"></div>
+                  <h4 class="u-text u-text-8" style="text-align: center">{{room}}</h4>
+
+                  <div class="u-expanded-width u-gradient u-shape u-shape-rectangle u-shape-3"></div>
+                  <div class="u-form u-form-2">
+                    <br>
+                    <form id="post-form2" class="u-clearfix " style="padding: 10px;">
+                      {% csrf_token %}
+                      <input type="hidden" name="username" id="username" value="{{username}}"/>
+                      <input type="hidden" name="room_id" id="room_id" value="{{room_details.id}}"/>
+                      <div class="u-form-group u-form-partition-factor-2 u-form-textarea u-label-none u-vertical-form-control-visible u-form-group-3">
+                        <label for="textarea-0de8" class="u-label">Textarea</label>
+                        <textarea rows="4" cols="40" name="message" id="message" class="u-black u-border-2 u-border-white u-custom-font u-font-roboto u-input u-input-rectangle u-radius-9 u-input-2" required="" maxlength="50000"></textarea>
+                      </div>
+                      <div class="u-align-center u-form-group u-form-submit u-label-none">
+                        <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-5 u-btn-5"><span class="u-file-icon u-icon u-text-white u-icon-1"><img src="/static/images/3177384-63ba0d1a.png" alt=""></span>&nbsp;​&nbsp;
+                        </a>
+                        <input type="submit" value="submit" class="u-form-control-hidden">
+                      </div>
+                    </form>
+                  </div>                  
+                  <div id="display" class="u-black u-opacity u-opacity-85 u-radius-11 u-shape u-shape-round u-shape-4" style="overflow-y: scroll;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      $(document).ready(function(){
+          setInterval(function(){
+              $.ajax({
+                  type: 'GET',
+                  url : "http://127.0.0.1:8000/gamepage/getMessages/{{room_proper}}/",
+                  success: function(response){
+                      console.log(response);
+                      var display = $("#display");
+                      var isScrolledToBottom = display[0].scrollHeight - display.outerHeight() <= display.scrollTop() + 1;
+      
+                      $("#display").empty();
+                      for (var key in response.messages) {
+                          var user = response.messages[key].user;
+                          var value = response.messages[key].value;
+                          var message = '<div class="message"><div class="user">' + user +' --'+ '</div><div class="value">'+ value + '</div></div>';
+                          $("#display").append(message);
+                      }
+      
+                      if (isScrolledToBottom) {
+                          display.scrollTop(display.prop("scrollHeight"));
+                      }
+                  },
+                  error: function(response){
+                      console.error('An error occurred:', response.responseText);
+                  }
+              });
+          },1000);
+      })
+      </script>
+
+    <script type="text/javascript">
+      $(document).on('submit','#post-form2',function(e){
+        e.preventDefault();
+    
+        $.ajax({
+          type:'POST',
+          url:'http://127.0.0.1:8000/gamepage/send',
+          data:{
+              username:$('#username').val(),
+              room_id:$('#room_id').val(),
+              message:$('#message').val(),
+            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+          },
+          success: function(data){
+             //alert(data)
+          }
+        });
+        document.getElementById('message').value = ''
+      });
+    </script>
+    {% if not user.is_authenticated %}
+    <script>
+      // Redirect to home page after displaying alert message
+      function redirectAndAlert(message, url) {
+        alert(message);
+        window.location.href = url;
+      }
+  
+      $(document).ready(function() {
+        redirectAndAlert("Please log in before going to this page", "http://127.0.0.1:8000");
+      });
+    </script>
+  {% endif %}
+  
+   
+</body></html>

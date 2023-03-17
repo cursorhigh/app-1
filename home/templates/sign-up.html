@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% load static %}
+<html style="font-size: 16px;" lang="en"><head>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>sign up</title>
+    {% load static %}
+    <link rel="stylesheet" href="/static/nicepage.css" media="screen">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="/static/sign-up.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/static/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/static/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.4.4, nicepage.com">
+    <meta name="referrer" content="origin">
+    <link rel="icon" href="/static/images/favicon.jpg">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i">
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Cursor High"
+}</script>
+
+    <meta name="theme-color" content="#0d31f0">
+    <meta property="og:title" content="sign up">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="/static/intlTelInput/" /></head>
+  <body class="u-body u-overlap u-overlap-contrast u-overlap-transparent u-xl-mode" data-lang="en">
+    
+    <section class="u-clearfix u-shading u-uploaded-video u-video u-video-cover u-section-1" id="sec-f09e">
+      
+      <div class="u-background-video u-expanded" style="filter: brightness(0.8);">
+        <div class="embed-responsive">
+          <video class="embed-responsive-item" data-autoplay="1" loop="1" muted="1" autoplay="autoplay" playsinline="">
+            <source src="/static/files/AuroraBorealis-90877.mp4" type="video/mp4">
+            <p>Your browser does not support HTML5 video.</p>
+          </video>
+        </div>
+      </div>
+      
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-container-style u-grey-80 u-group u-opacity u-opacity-45 u-radius-50 u-shape-round u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h2 class="u-align-center u-custom-font u-font-ubuntu u-text u-text-1">Sign Up&nbsp;</h2>
+            <div class="u-align-center u-form u-form-1">
+              <br>
+              <div id="success" class="col-md-10">
+                {% if messages %}
+                {% for message in messages %}
+                    <span class="padding-bottom--15" ">{{message}}</span>
+                {%  endfor %}
+              {% endif %}
+              </div>
+              <form action="rotp"method="post"  id="regt" source="email" name="form" style="padding: 12px;">
+                {%csrf_token%}
+                <div class="u-form-group u-label-none" data-dependency="[{&quot;action&quot;:&quot;hide&quot;,&quot;field&quot;:&quot;email&quot;,&quot;condition&quot;:&quot;not-contain&quot;,&quot;value&quot;:&quot;&quot;}]">
+                  <label for="name-c98c" class="u-custom-font u-font-ubuntu u-label u-label-1">USER NAME</label>
+                  <input type="text"  placeholder="                   Enter your USER NAME" name="username" id='user' class="u-black u-custom-font u-font-ubuntu u-input u-input-rectangle u-radius-6 u-text-white u-input-1" required="required" maxlength="15">
+                </div>
+                <br>
+                <div class="u-form-email u-form-group u-label-none" data-dependency="[{&quot;action&quot;:&quot;hide&quot;,&quot;field&quot;:&quot;user&quot;,&quot;condition&quot;:&quot;not-contain&quot;,&quot;value&quot;:&quot;&quot;}]">
+                  <label for="email-c98c" class="u-custom-font u-font-ubuntu u-label u-label-2">Email</label>
+                  <input type="email"  placeholder="               Enter a valid email address" id="email-c98c" name="email" id='email' class="u-black u-custom-font u-font-ubuntu u-input u-input-rectangle u-radius-6 u-text-white u-input-2" required="required" maxlength="60">
+                </div>
+                <br>
+                <div class="u-align-center u-form-group u-form-submit u-label-none">
+                  <input type="submit" value="submit" class="u-form-control-hidden">
+                  <a href="#" class="u-active-black u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-base u-radius-11 u-btn-1">Get EMAIL OTP<br>
+                  </a>
+                </div>
+              </form>
+              </div>  
+            <div class="u-align-center u-form u-form-2">
+              <form action="votp" method="post" source="email" name="form" style="padding: 12px;"  redirect="false">
+                {%csrf_token%}
+                <div class="u-form-group u-label-none u-form-group-4">
+                  <label for="text-516f" class="u-custom-font u-font-ubuntu u-label u-label-3">OTP</label>
+                  <input type="text" placeholder="               Enter OTP for verification" id="text-516f" name="otp" class="u-black u-custom-font u-font-ubuntu u-input u-input-rectangle u-radius-6 u-text-white u-input-3">
+                </div>
+                <br>
+                <div class="u-form-group u-form-name u-label-none">
+                  <label for="name-c98c" class="u-custom-font u-font-ubuntu u-label u-label-4">Password</label>
+                  <input type="password" placeholder="                 Enter Strong Password" id="name-c98c" name="password" class="u-black u-custom-font u-font-ubuntu u-input u-input-rectangle u-radius-6 u-text-white u-input-4" required="" maxlength="15">
+                </div>
+                <br>
+                <div class="u-align-center u-form-group u-form-submit u-label-none">
+                  <input type="submit" value="submit" class="u-form-control-hidden">
+                  <a href="#" class="u-active-black u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-base u-radius-11 u-btn-2">SIGN UP</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <h2 class="u-align-center u-custom-font u-font-ubuntu u-text u-text-white u-text-2">WELCOME TO CURSOR HIGH</h2>
+      </div>
+    </section>
+    <section class="u-black u-clearfix u-section-2" id="sec-347e">
+      <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+        <h2 class="u-align-center u-custom-font u-font-ubuntu u-text u-text-white u-text-1">Already have an account&nbsp; ?</h2>
+        <a href="/login/" class="u-border-white u-btn u-btn-round u-button-style u-hover-feature u-none u-radius-15 u-text-hover-custom-color-1 u-text-white u-btn-1" target="_blank">LOG IN<span style="font-size: 2.25rem;"></span>
+        </a>
+      </div>
+      
+    </section>
+    <script>
+      $(document).ready(function() {
+        $('#regt').submit(function(e) {
+          e.preventDefault();
+          $.ajax({
+            type: 'POST',
+            url: 'http://127.0.0.1:8000/register/rotp',
+            data: $('#regt').serialize(),
+            success: function(data) {
+              $('#success').html(data);
+            },
+            error: function(error) {
+              console.log(error);
+            }
+          });
+        });
+      });
+    </script> 
+</body></html>

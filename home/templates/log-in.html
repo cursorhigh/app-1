@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load static %}
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>log in</title>
+    <link rel="stylesheet" href="/static/lognicepage.css" media="screen">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="/static/log-in.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/static/logjquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/static/lognicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.4.4, nicepage.com">
+    <meta name="referrer" content="origin">
+    <link rel="icon" href="/static/images/favicon.jpg">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i">
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Cursor High"
+}</script>
+    <meta name="theme-color" content="#0d31f0">
+    <meta property="og:title" content="log in">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="/static/intlTelInput/" /></head>
+
+  <body class="u-body u-overlap u-overlap-contrast u-overlap-transparent u-xl-mode" data-lang="en">
+    <script>
+      $(document).ready(function() {
+        $('#logt').submit(function(e) {
+          e.preventDefault();
+          $.ajax({
+              type: 'POST',
+              url: "http://127.0.0.1:8000/login/",
+              data: {
+                username: $('#username').val(),
+                password: $('#password').val(),
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+              },
+              success: function (data) {
+                $('#success').html(data)
+              }
+            });
+          });
+        });
+  </script>
+    <section class="u-clearfix u-shading u-uploaded-video u-video u-video-cover u-section-1" id="sec-f09e">
+      <div class="u-background-video u-expanded" style="filter: brightness(0.8);">
+        <div class="embed-responsive">
+          <video class="embed-responsive-item" data-autoplay="1" loop="" muted="1" autoplay="autoplay" playsinline="">
+            <source src="/static/files/AuroraBorealis-90877.mp4" type="video/mp4">
+            <p>Your browser does not support HTML5 video.</p>
+          </video>
+        </div>
+      </div>
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-container-style u-grey-80 u-group u-opacity u-opacity-45 u-radius-50 u-shape-round u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h2 class="u-align-center u-custom-font u-font-ubuntu u-text u-text-1">Log In&nbsp;</h2>
+            <div class="u-align-center u-form u-form-1">
+              <span id="success" class="padding-bottom--15"></span>
+              {% if messages %}
+              {% for message in messages %}
+                  <span class="padding-bottom--15" ">{{message}}</span>
+              {%  endfor %}
+            {% endif %}
+              <form action="log" method="post" id="logt" source="email" name="form" style="padding: 6px;" >
+                {%csrf_token%}
+                <div class="u-form-group u-label-none u-form-group-1">
+                  <label for="text-516f" class="u-custom-font u-font-ubuntu u-label u-label-1">user</label>
+                  <input type="text" placeholder="             Enter Registered USER NAME" id="username" name="username" class="u-black u-custom-font u-font-ubuntu u-input u-input-rectangle u-radius-11 u-text-white u-input-1">
+                </div>
+                <br>
+                <div class="u-form-group u-form-name u-label-none">
+                  <label for="name-c98c" class="u-custom-font u-font-ubuntu u-label u-label-2">password</label>
+                  <input type="password" placeholder="               Enter  Valid User Password" id="password" name="password" class="u-black u-custom-font u-font-ubuntu u-input u-input-rectangle u-radius-11 u-text-white u-input-2" required="" maxlength="15">
+                </div>
+                <br>
+                <div class="u-align-center u-form-group u-form-submit u-label-none">
+                  <input type="submit" value="submit" class="u-form-control-hidden">
+                  <a href="#" class="u-active-black u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-base u-radius-11 u-btn-1">GET OTP<br>
+                  </a>
+                </div>
+              </form>
+            </div>
+            <br>
+            <div class="u-align-center u-form u-form-2">
+              <form action="clog" method="post" source="email" name="form" style="padding: 6px;">
+                {%csrf_token%}
+                <div class="u-form-group u-form-name u-label-none">
+                  <label for="name-c98c" class="u-custom-font u-font-ubuntu u-label u-label-3">otp</label>
+                  <input type="text" placeholder="                 Enter OTP for verification" id="name-c98c" name="otp" class="u-black u-custom-font u-font-ubuntu u-input u-input-rectangle u-radius-11 u-text-white u-input-3" required="" maxlength="15">
+                </div>
+                <br>
+                <div class="u-align-center u-form-group u-form-submit u-label-none">
+                  <input type="submit" value="submit" class="u-form-control-hidden">
+                  <a href="#" class="u-active-black u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-base u-radius-11 u-btn-2">LOG IN<br>
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <h2 class="u-align-center u-custom-font u-font-ubuntu u-text u-text-white u-text-2">WELCOME TO CURSOR HIGH</h2>
+      </div>
+    </section>
+    <section class="u-black u-clearfix u-section-2" id="sec-347e">
+      <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+        <h2 class="u-align-center u-custom-font u-font-ubuntu u-text u-text-white u-text-1">Don't have an account&nbsp; ?</h2>
+        <a href="http://127.0.0.1:8000/register/" class="u-border-white u-btn u-btn-round u-button-style u-hover-feature u-none u-radius-15 u-text-hover-custom-color-1 u-text-white u-btn-1" target="_blank">SIGN UP<span style="font-size: 2.25rem;"></span>
+        </a>
+      </div>
+    </section>
+   
+</body></html>
